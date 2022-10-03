@@ -6,6 +6,7 @@ package no.oslomet.cs.algdat.Oblig2;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Objects;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -47,23 +48,22 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         if (a == null){
             throw new NullPointerException();
         }
-        if (a.length>0){
+        if (a.length > 0){
             int i = 0;
             for (;i< a.length;i++){
-                if (a[i] !=null){
+                if (a[i] != null){
                     hode=new Node<>(a[i]);
                     antall++;
                     break;
                 }
             }
             hale = hode ;
-
-            if (hode!=null){
+            if (hode != null){
                 i++;
-                for(;i<a.length;i++){
-                    if(a[i]!=null){
-                        hale.neste=new Node<>(a[i],hale,null);
-                        hale=hale.neste;
+                for(;i < a.length;i++){
+                    if(a[i] != null){
+                        hale.neste= new Node<>(a[i],hale,null);
+                        hale = hale.neste;
                         antall++;
                     }
                 }
@@ -74,47 +74,182 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
 
     public Liste<T> subliste(int fra, int til) {
-        throw new UnsupportedOperationException();
-    }
+        fraTilKontroll(antall,fra,til);
 
+        Liste<T>subliste=new DobbeltLenketListe<>();
+
+        int lengde=til - fra;
+        if (lengde<1){
+            return subliste;
+        }
+        Node<T>hjelp= finnNode(fra);
+        while (lengde>0){
+            subliste.leggInn(hjelp.verdi);
+            hjelp=hjelp.neste;
+            lengde--;
+        }
+        return subliste;
+
+    }
     @Override
     public int antall() {
-        throw new UnsupportedOperationException();
+        return antall;
     }
-
     @Override
     public boolean tom() {
-        throw new UnsupportedOperationException();
+        if (hode== null){
+            return true;
+
+        }else {
+            return false;
+        }
+    }
+    @Override
+    public boolean leggInn(T verdi){
+        Objects.requireNonNull(verdi);
+        Node<T>nyttNode=new Node<>(verdi);
+        //if list is empty.peker head and tail to a new node and antall og chening will be chaneged
+        if (hode ==null && hale ==null && antall==0){
+            hode = nyttNode;
+            hale=nyttNode;
+            endringer++;
+            antall++;
+            return true;
+        }
+        // her if list is not empty than the tail is the value befor the inserted
+        else {
+            nyttNode.forrige=hale;
+            hale.neste=nyttNode;
+            hale=nyttNode;
+            endringer++;
+            antall++;
+            return true;
+        }
+    }
+    @Override
+    public String toString(){
+        Node<T> midler=hode;
+        StringBuilder form= new StringBuilder();
+        form.append("[");
+
+        if (tom()){
+            form.append("]");
+            return form.toString();
+        }else {
+            form.append(midler.verdi);
+            midler =midler.neste;
+            while (midler !=null){
+                form.append(",");
+                form.append(midler.verdi);
+                midler= midler.neste;
+            }
+        }
+        form.append("]");
+        return form.toString();
+    }
+    @Override
+    public void leggInn(int indes, T verdi){
+        Objects.requireNonNull(verdi,"verdei it is null");
+        if(indes>antall){
+            throw new IndexOutOfBoundsException("indes it's bigger than list length ");
+        }else if (indes <0){
+            throw new NullPointerException("indes it is nagitiv ");
+
+        }
+        //if the list is empty than a new verdi will be both head and tail
+        if (antall==0 && indes==0){
+            hode =new Node<T>(verdi,null,null);
+            hale=hode;
+        }else if (indes== antall){
+            hale=new Node<>(verdi,hale,null);
+            hale.neste.forrige=hode;
+        }else if (indes==0){
+            hode=new Node<>(verdi,null,hode);
+            hode.neste.forrige=hode;
+        }
+        else {
+            Node<T> midler=hode;
+            for (int i = 0;i<indes;i++) midler= midler.neste;{
+                midler = new Node<T>(verdi,midler.forrige,midler);
+            }
+            midler.neste.forrige=midler.forrige.neste=midler;
+
+        }
+        antall++;
+        endringer++;
     }
 
-    @Override
-    public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException();
+    private Node<T> finnNode(int indeks) {
+        //sjekker om indeks finnes i listen, returnerer false hvis ikke.
+        indeksKontroll(indeks, false);
+        Node<T> midlertidig;
+
+        //hvis indeks er mindre enn liste/2 starter fra hode og setter hode til midlertidig node og setter pekeren til midlertidig.neste i hver iterasjon. stopper loopen på indeks.
+        if (indeks < antall / 2) {
+            midlertidig = hode;
+            for (int i = 0; i < indeks; i++) {
+                midlertidig = midlertidig.neste;
+            }
+            return midlertidig;
+        }
+        // Hvis indeks er større enn liste/2 starter fra hale og setter hale til midlertidig node og setter pekeren til midlertidig.forrige i hver iterasjon. stopper loopen ved indeks.
+        else {
+            midlertidig = hale;
+            for (int i = antall-1; i > indeks; i--) {
+                midlertidig = midlertidig.forrige;
+            }
+            return midlertidig;
+        }
     }
 
-    @Override
-    public void leggInn(int indeks, T verdi) {
-        throw new UnsupportedOperationException();
+    private void fraTilKontroll(int tabellLengde, int fra, int til) {
+        if (fra < 0 || til > tabellLengde) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (fra > til) {
+            throw new IllegalArgumentException();
+        }
     }
+
+
+
+
+
 
     @Override
     public boolean inneholder(T verdi) {
-        throw new UnsupportedOperationException();
+        return indeksTil(verdi)!=-1;
     }
 
     @Override
     public T hent(int indeks) {
-        throw new UnsupportedOperationException();
+        Node<T>midlertidlig =finnNode(indeks);
+        return midlertidlig.verdi;
     }
 
     @Override
     public int indeksTil(T verdi) {
-        throw new UnsupportedOperationException();
+        if (verdi == null) {
+            return -1;
+        }
+        Node<T>midlertidig=hode;
+        for (int i = 0; i<antall; i++,midlertidig=midlertidig.neste){
+            if (midlertidig.verdi.equals(verdi)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public T oppdater(int indeks, T nyverdi) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(nyverdi);
+        Node<T>midlertid=finnNode(indeks);
+        T gamle = midlertid.verdi;
+        endringer++;
+        midlertid.verdi=nyverdi;
+        return gamle;
+
     }
 
     @Override
@@ -132,13 +267,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException();
-    }
 
     public String omvendtString() {
-        throw new UnsupportedOperationException();
+        Node<T>midler=hale;
+        StringBuilder form=new StringBuilder();
+        form.append("[");
+        if (tom()){
+            form.append("]");
+            return form.toString();
+        }
+        else {
+            form.append(midler.verdi);
+            midler=midler.forrige;
+            while (midler !=null){
+                form.append(",");
+                form.append(midler.verdi);
+                midler=midler.forrige;
+            }
+        }
+        form.append("]");
+        return toString();
     }
 
     @Override
