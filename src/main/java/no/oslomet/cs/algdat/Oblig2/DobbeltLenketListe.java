@@ -4,7 +4,6 @@ package no.oslomet.cs.algdat.Oblig2;
 ////////////////// class DobbeltLenketListe //////////////////////////////
 
 
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -148,67 +147,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return form.toString();
     }
     @Override
-    public void leggInn(int indes, T verdi){
-        Objects.requireNonNull(verdi,"verdei it is null");
-        if(indes>antall){
-            throw new IndexOutOfBoundsException("indes it's bigger than list length ");
-        }else if (indes <0){
-            throw new NullPointerException("indes it is nagitiv ");
+    public void leggInn(int index, T verdi){
 
-        }
-        //if the list is empty than a new verdi will be both head and tail
-        if (antall==0 && indes==0){
-            hode =new Node<T>(verdi,null,null);
-            hale=hode;
-        }else if (indes== antall){
-            hale=new Node<>(verdi,hale,null);
-            hale.neste.forrige=hode;
-        }else if (indes==0){
-            hode=new Node<>(verdi,null,hode);
-            hode.neste.forrige=hode;
-        }
-        else {
-            Node<T> midler=hode;
-            for (int i = 0;i<indes;i++) midler= midler.neste;{
-                midler = new Node<T>(verdi,midler.forrige,midler);
-            }
-            midler.neste.forrige=midler.forrige.neste=midler;
-
-        }
-        antall++;
-        endringer++;
     }
 
     private Node<T> finnNode(int indeks) {
         //sjekker om indeks finnes i listen, returnerer false hvis ikke.
-        indeksKontroll(indeks, false);
-        Node<T> midlertidig;
 
-        //hvis indeks er mindre enn liste/2 starter fra hode og setter hode til midlertidig node og setter pekeren til midlertidig.neste i hver iterasjon. stopper loopen på indeks.
-        if (indeks < antall / 2) {
-            midlertidig = hode;
-            for (int i = 0; i < indeks; i++) {
-                midlertidig = midlertidig.neste;
-            }
-            return midlertidig;
-        }
-        // Hvis indeks er større enn liste/2 starter fra hale og setter hale til midlertidig node og setter pekeren til midlertidig.forrige i hver iterasjon. stopper loopen ved indeks.
-        else {
-            midlertidig = hale;
-            for (int i = antall-1; i > indeks; i--) {
-                midlertidig = midlertidig.forrige;
-            }
-            return midlertidig;
-        }
-    }
 
     private void fraTilKontroll(int tabellLengde, int fra, int til) {
-        if (fra < 0 || til > tabellLengde) {
-            throw new IndexOutOfBoundsException();
-        }
-        if (fra > til) {
-            throw new IllegalArgumentException();
-        }
+
     }
 
 
@@ -223,32 +171,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T hent(int indeks) {
-        Node<T>midlertidlig =finnNode(indeks);
-        return midlertidlig.verdi;
+
     }
 
     @Override
     public int indeksTil(T verdi) {
-        if (verdi == null) {
-            return -1;
-        }
-        Node<T>midlertidig=hode;
-        for (int i = 0; i<antall; i++,midlertidig=midlertidig.neste){
-            if (midlertidig.verdi.equals(verdi)){
-                return i;
-            }
-        }
-        return -1;
+
     }
 
     @Override
     public T oppdater(int indeks, T nyverdi) {
-        Objects.requireNonNull(nyverdi);
-        Node<T>midlertid=finnNode(indeks);
-        T gamle = midlertid.verdi;
-        endringer++;
-        midlertid.verdi=nyverdi;
-        return gamle;
 
     }
 
@@ -269,24 +201,27 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
 
     public String omvendtString() {
-        Node<T>midler=hale;
-        StringBuilder form=new StringBuilder();
+        Node<T>temp=hale;
+        StringBuilder form= new StringBuilder();
         form.append("[");
+        //checks if the list is empty  then returns an empty string it is ;
         if (tom()){
             form.append("]");
-            return form.toString();
+            form.toString();
+            //traveres the list backwords,the node points to the previous node in each iteration and appends the values
         }
         else {
-            form.append(midler.verdi);
-            midler=midler.forrige;
-            while (midler !=null){
+            form.append(temp.verdi);
+            temp=temp.forrige;
+            while (temp !=null){
                 form.append(",");
-                form.append(midler.verdi);
-                midler=midler.forrige;
+                form.append(temp.verdi);
+                temp=temp.forrige;
             }
         }
         form.append("]");
-        return toString();
+        return form.toString();
+
     }
 
     @Override

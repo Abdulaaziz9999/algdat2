@@ -39,6 +39,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-17.0.1/lib/src.zip!/java.base/java/lang/UnsupportedOperationException.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="2FRNqhuSRqWZ0PpQji53MofB4Ru" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,12 +54,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Gradle.Oblig2Test.oppgave2">
     <configuration name="Oblig2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -122,9 +124,53 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Oblig2Test.oppgave4" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;no.oslomet.cs.algdat.Oblig2.Oblig2Test.oppgave4&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Oblig2Test.oppgave5" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;no.oslomet.cs.algdat.Oblig2.Oblig2Test.oppgave5&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Oblig2Test.oppgave2" />
+        <item itemvalue="Gradle.Oblig2Test.oppgave5" />
+        <item itemvalue="Gradle.Oblig2Test.oppgave4" />
         <item itemvalue="Gradle.Oblig2Test.oppgave1" />
         <item itemvalue="Gradle.Oblig2Test" />
       </list>
@@ -140,7 +186,7 @@
       <updated>1664451131074</updated>
       <workItem from="1664451133404" duration="1447000" />
       <workItem from="1664532904993" duration="4233000" />
-      <workItem from="1664564046921" duration="24918000" />
+      <workItem from="1664564046921" duration="31150000" />
     </task>
     <task id="LOCAL-00001" summary="ykuktu">
       <created>1664452334780</created>
@@ -156,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664608907924</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="jeg har fikst oppgave 3 og starter oppgave 4">
+      <created>1664801205599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664801205599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +218,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ykuktu" />
-    <option name="LAST_COMMIT_MESSAGE" value="ykuktu" />
+    <MESSAGE value="jeg har fikst oppgave 3 og starter oppgave 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="jeg har fikst oppgave 3 og starter oppgave 4" />
   </component>
 </project>
