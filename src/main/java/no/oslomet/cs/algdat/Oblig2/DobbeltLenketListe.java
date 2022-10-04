@@ -96,10 +96,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
     @Override
     public boolean tom() {
-        if (hode== null){
+        if (hode==null){
             return true;
-
-        }else {
+        }
+        else {
             return false;
         }
     }
@@ -108,7 +108,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Objects.requireNonNull(verdi);
         Node<T>nyttNode=new Node<>(verdi);
         //if list is empty.peker head and tail to a new node and antall og chening will be chaneged
-        if (hode ==null && hale ==null && antall==0){
+        if (tom()){
             hode = nyttNode;
             hale=nyttNode;
             endringer++;
@@ -153,6 +153,21 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     private Node<T> finnNode(int indeks) {
         //sjekker om indeks finnes i listen, returnerer false hvis ikke.
+        indeksKontroll(indeks,false);
+        Node<T>temprator;
+        if (indeks<antall/2){
+            temprator=hode;
+            for (int i = 0;i<indeks;i++){
+                temprator=temprator.neste;
+            }
+            return temprator;
+        }else {
+            temprator=hale;
+            for(int i = antall -1; i<indeks;i--){
+                temprator=temprator.forrige;
+            }
+            return temprator;
+        }
 
 
     private void fraTilKontroll(int tabellLengde, int fra, int til) {
@@ -171,6 +186,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T hent(int indeks) {
+            Node<T>temp = finnNode(indeks);
+            return temp.verdi;
+        }
 
     }
 
@@ -181,6 +199,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T oppdater(int indeks, T nyverdi) {
+        Objects.requireNonNull(nyverdi);
+        Node<T>temp= finnNode(indeks);
+
+        T eldereVerdi= temp.verdi;
+        endringer++;
+
+
+        temp.verdi=nyverdi;
+        return eldereVerdi;
 
     }
 
