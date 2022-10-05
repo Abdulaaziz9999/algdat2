@@ -200,7 +200,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int indeksTil(T verdi) {
+        if (verdi == null) {
+            return -1;
 
+        }
     }
 
     @Override
