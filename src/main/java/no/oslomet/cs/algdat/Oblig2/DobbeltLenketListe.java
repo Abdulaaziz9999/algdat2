@@ -78,17 +78,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Liste<T>subliste=new DobbeltLenketListe<>();
 
         int lengde=til - fra;
-        if (lengde<1){
+        if (lengde < 1){
             return subliste;
         }
-        Node<T>hjelp= finnNode(fra);
+        Node<T>hjelpeNode= finnNode(fra);
         while (lengde>0){
-            subliste.leggInn(hjelp.verdi);
-            hjelp=hjelp.neste;
+            subliste.leggInn(hjelpeNode.verdi);
+            hjelpeNode=hjelpeNode.neste;
             lengde--;
         }
         return subliste;
-
     }
     @Override
     public int antall() {
@@ -108,7 +107,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Objects.requireNonNull(verdi);
         Node<T>nyttNode=new Node<>(verdi);
         //if list is empty.peker head and tail to a new node and antall og chening will be chaneged
-        if (tom()){
+        if (hode == null && hale == null && antall == 0){
             hode = nyttNode;
             hale=nyttNode;
             endringer++;
@@ -153,24 +152,31 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     private Node<T> finnNode(int indeks) {
         //sjekker om indeks finnes i listen, returnerer false hvis ikke.
-        indeksKontroll(indeks,false);
-        Node<T>temprator;
-        if (indeks<antall/2){
-            temprator=hode;
-            for (int i = 0;i<indeks;i++){
-                temprator=temprator.neste;
+        indeksKontroll(indeks, false);
+        Node<T> temprator;
+        if (indeks < antall / 2) {
+            temprator = hode;
+            for (int i = 0; i < indeks; i++) {
+                temprator = temprator.neste;
             }
             return temprator;
-        }else {
-            temprator=hale;
-            for(int i = antall -1; i<indeks;i--){
-                temprator=temprator.forrige;
+        } else {
+            temprator = hale;
+            for (int i = antall - 1; i < indeks; i--) {
+                temprator = temprator.forrige;
             }
             return temprator;
         }
+    }
 
 
     private void fraTilKontroll(int tabellLengde, int fra, int til) {
+            if (fra <0 || til >tabellLengde){
+                throw new IndexOutOfBoundsException();
+            }
+            if (fra> til ){
+                throw new IllegalStateException();
+            }
 
     }
 

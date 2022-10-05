@@ -60,28 +60,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave2">
-    <configuration name="Oblig2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;no.oslomet.cs.algdat.Oblig2.Oblig2Test&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave3">
     <configuration name="Oblig2Test.oppgave1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -109,6 +88,27 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;no.oslomet.cs.algdat.Oblig2.Oblig2Test.oppgave2&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Oblig2Test.oppgave3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;no.oslomet.cs.algdat.Oblig2.Oblig2Test.oppgave3&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -168,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Oblig2Test.oppgave3" />
         <item itemvalue="Gradle.Oblig2Test.oppgave2" />
         <item itemvalue="Gradle.Oblig2Test.oppgave5" />
         <item itemvalue="Gradle.Oblig2Test.oppgave4" />
         <item itemvalue="Gradle.Oblig2Test.oppgave1" />
-        <item itemvalue="Gradle.Oblig2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +186,7 @@
       <updated>1664451131074</updated>
       <workItem from="1664451133404" duration="1447000" />
       <workItem from="1664532904993" duration="4233000" />
-      <workItem from="1664564046921" duration="43413000" />
+      <workItem from="1664564046921" duration="46077000" />
     </task>
     <task id="LOCAL-00001" summary="ykuktu">
       <created>1664452334780</created>
@@ -216,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664860342889</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="nå start jeg med oppgave 3">
+      <created>1664886480799</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664886480799</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +234,7 @@
     <MESSAGE value="ykuktu" />
     <MESSAGE value="jeg har fikst oppgave 3 og starter oppgave 4" />
     <MESSAGE value="jeg har gjort oppgave 2 og test er godkjent" />
-    <option name="LAST_COMMIT_MESSAGE" value="jeg har gjort oppgave 2 og test er godkjent" />
+    <MESSAGE value="nå start jeg med oppgave 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="nå start jeg med oppgave 3" />
   </component>
 </project>
