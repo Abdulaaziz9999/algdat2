@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd48059c-10b4-4541-8d6c-10e14a28f0f3" name="Changes" comment="">
+    <list default="true" id="cd48059c-10b4-4541-8d6c-10e14a28f0f3" name="Changes" comment="oppgava 4 ble testet og få godkjent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/oslomet/cs/algdat/Oblig2/DobbeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/oslomet/cs/algdat/Oblig2/DobbeltLenketListe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave3">
+  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave4">
     <configuration name="Oblig2Test.oppgave1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,10 +167,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Oblig2Test.oppgave4" />
         <item itemvalue="Gradle.Oblig2Test.oppgave3" />
         <item itemvalue="Gradle.Oblig2Test.oppgave2" />
         <item itemvalue="Gradle.Oblig2Test.oppgave5" />
-        <item itemvalue="Gradle.Oblig2Test.oppgave4" />
         <item itemvalue="Gradle.Oblig2Test.oppgave1" />
       </list>
     </recent_temporary>
@@ -186,7 +185,7 @@
       <updated>1664451131074</updated>
       <workItem from="1664451133404" duration="1447000" />
       <workItem from="1664532904993" duration="4233000" />
-      <workItem from="1664564046921" duration="47622000" />
+      <workItem from="1664564046921" duration="48323000" />
     </task>
     <task id="LOCAL-00001" summary="ykuktu">
       <created>1664452334780</created>
@@ -230,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664946063534</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jeg prøver å jobbe med oppgava 4">
+      <created>1664952452766</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664952452766</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +249,7 @@
     <MESSAGE value="jeg har gjort oppgave 2 og test er godkjent" />
     <MESSAGE value="nå start jeg med oppgave 3" />
     <MESSAGE value="jeg har fikst oppgave 3 og test er godkjent" />
-    <option name="LAST_COMMIT_MESSAGE" value="jeg har fikst oppgave 3 og test er godkjent" />
+    <MESSAGE value="jeg prøver å jobbe med oppgava 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="jeg prøver å jobbe med oppgava 4" />
   </component>
 </project>
