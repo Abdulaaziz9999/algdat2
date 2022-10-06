@@ -186,7 +186,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
        antall++;
        endringer++;
 
-    private Node<T>finnNode(int indeks){
+       private Node<T>finnNode(int indeks){
         //sjekker om indeks finnes i listen, returnerer false hvis ikke.
         indeksKontroll(indeks, false);
         Node<T> temprator;
@@ -253,13 +253,83 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException();
+        if (verdi ==null){
+            return false;
+        }
+        Node<T>temper= hode;
+
+        if (verdi.equals(temper.verdi)){
+            if (temper.neste !=null){
+                hode=temper.neste;
+                hode.forrige=null;
+            }else {
+                hode=null;
+                hale=null;
+            }
+            antall++;
+            endringer++;
+            return true;
+        }
+        temper=hale;
+        if (verdi.equals(temper.verdi)){
+            hale =temper.forrige;
+            hale.neste=null;
+            antall--;
+            endringer++;
+            return true;
+        }
+        temper=hode.neste;
+        for (; temper !=null;temper=temper.neste){
+            if (verdi.equals(temper.verdi)){
+                temper.forrige.neste=temper.neste;
+                temper.neste.forrige=temper.forrige;
+                antall--;
+                endringer++;
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public T fjern(int indeks) {
-        throw new UnsupportedOperationException();
+        indeksKontroll(indeks, false);
+        Node<T> temper = hode;
+        T verdi;
+
+
+        if (indeks == 0) {
+            verdi = temper.verdi;
+            if (temper.neste != null) {
+                hode = temper.neste;
+                hode.forrige = null;
+
+            } else {
+                hode = null;
+                hode = null;
+            }
+        } else if (indeks == antall - 1) {
+            temper = hale;
+            verdi = hale.verdi;
+            hale = temper.forrige;
+            hale.neste = null;
+
+        }
+        else {
+            for(int i = 0 ; i<indeks ; i++){
+                temper=temper.neste;
+            }
+            verdi=temper.verdi;
+            temper.forrige.neste=temper.neste;
+
+            temper.neste.forrige=temper.forrige;
+
+        }
+        antall--;
+        endringer++;
+        return verdi;
     }
+
 
     @Override
     public void nullstill() {
