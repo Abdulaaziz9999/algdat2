@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd48059c-10b4-4541-8d6c-10e14a28f0f3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/oslomet/cs/algdat/Oblig2/DobbeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/oslomet/cs/algdat/Oblig2/DobbeltLenketListe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave6">
+  <component name="RunManager" selected="Gradle.Oblig2Test.oppgave4">
     <configuration name="Oblig2Test.oppgave2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,9 +168,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Oblig2Test.oppgave6" />
-        <item itemvalue="Gradle.Oblig2Test.oppgave5" />
         <item itemvalue="Gradle.Oblig2Test.oppgave4" />
+        <item itemvalue="Gradle.Oblig2Test.oppgave5" />
+        <item itemvalue="Gradle.Oblig2Test.oppgave6" />
         <item itemvalue="Gradle.Oblig2Test.oppgave3" />
         <item itemvalue="Gradle.Oblig2Test.oppgave2" />
       </list>
@@ -186,7 +187,7 @@
       <workItem from="1664451133404" duration="1447000" />
       <workItem from="1664532904993" duration="4233000" />
       <workItem from="1664564046921" duration="56759000" />
-      <workItem from="1664980515198" duration="7948000" />
+      <workItem from="1664980515198" duration="10250000" />
     </task>
     <task id="LOCAL-00001" summary="ykuktu">
       <created>1664452334780</created>
@@ -251,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665026695876</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="oppgava 6 ble testet og få godkjent">
+      <created>1665043663473</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665043663473</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +275,7 @@
     <MESSAGE value="jeg prøver å jobbe med oppgava 4" />
     <MESSAGE value="oppgava 4 ble testet og få godkjent" />
     <MESSAGE value="oppgava 5 ble testet og få godkjent" />
-    <option name="LAST_COMMIT_MESSAGE" value="oppgava 5 ble testet og få godkjent" />
+    <MESSAGE value="oppgava 6 ble testet og få godkjent" />
+    <option name="LAST_COMMIT_MESSAGE" value="oppgava 6 ble testet og få godkjent" />
   </component>
 </project>
