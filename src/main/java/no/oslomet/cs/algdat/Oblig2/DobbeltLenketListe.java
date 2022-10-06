@@ -123,6 +123,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             antall++;
             return true;
         }
+
+
+
+
     }
     @Override
     public String toString(){
@@ -147,10 +151,42 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
     @Override
     public void leggInn(int index, T verdi){
+        Objects.requireNonNull(verdi,"verdi it is null");
 
-    }
+      /* while (index>antall && index<0 ){
+            throw new IllegalStateException("det er enten index er større enn liste lenght eller indeex mindre enn null ");
 
-    private Node<T> finnNode(int indeks) {
+    }*/
+        if ( index > antall){
+            throw new IllegalStateException("index store enn  list lengde");
+        }
+       else if (index < 0){
+           throw new IllegalStateException("index er  negativ ");
+
+        }
+       if (antall ==0 && index ==0){
+           hode=new Node<>(verdi,null,null);
+           hale=hode;
+       }
+       else if (index==antall){
+           hale =new Node<>(verdi,hale,null);
+           hale.forrige.neste =hale;
+       }else if (index==0){
+           hode=new Node<>(verdi,null,hode);
+           hode=hode.neste.forrige;
+       }
+       else {
+           Node<T> tempratory=hode;
+           for (int i = 0; i<index ;i++) tempratory=tempratory.neste;{
+               tempratory=new Node<T>(verdi,tempratory.forrige,tempratory);
+
+           }
+           tempratory.neste.forrige=tempratory.forrige.neste=tempratory;
+       }
+       antall++;
+       endringer++;
+
+    private Node<T>finnNode(int indeks){
         //sjekker om indeks finnes i listen, returnerer false hvis ikke.
         indeksKontroll(indeks, false);
         Node<T> temprator;
@@ -179,11 +215,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             }
 
     }
-
-
-
-
-
 
     @Override
     public boolean inneholder(T verdi) {
