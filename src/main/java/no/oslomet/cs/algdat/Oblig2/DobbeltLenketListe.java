@@ -164,15 +164,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             throw new IndexOutOfBoundsException("index er  negativ ");
 
         }
-        if (antall == 0) {
+        if (antall == 0 && index==0) {
             hode = new Node<>(verdi, null, null); // hvis listen er tom fra før
             hale = hode;
+
         } else if (index == antall) {
             hale = new Node<>(verdi, hale, null);
             hale.forrige.neste = hale;
         } else if (index == 0) {
             hode = new Node<>(verdi, null, hode);
-            hode = hode.neste.forrige;
+             hode.neste.forrige=hode;
         } else {
             Node<T> tempratory = hode;
             for (int i = 0; i < index; i++) tempratory = tempratory.neste;
