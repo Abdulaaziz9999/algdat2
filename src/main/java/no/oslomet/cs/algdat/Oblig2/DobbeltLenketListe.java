@@ -198,9 +198,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                 temprator = temprator.neste;
             }
             return temprator;
-        } else {
+        }
+        else {
             temprator = hale;
-            for (int i = antall - 1; i < indeks; i--) {
+            for (int i = antall-1; i > indeks; i--) {
                 temprator = temprator.forrige;
             }
             return temprator;
