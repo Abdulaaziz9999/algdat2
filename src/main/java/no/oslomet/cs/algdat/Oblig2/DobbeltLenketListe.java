@@ -4,9 +4,7 @@ package no.oslomet.cs.algdat.Oblig2;
 ////////////////// class DobbeltLenketListe //////////////////////////////
 
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -111,7 +109,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Objects.requireNonNull(verdi);
         Node<T> nyttNode = new Node<>(verdi);
         //if list is empty.peker head and tail to a new node and antall og chening will be chaneged
-        if (hode == null && hale == null && antall == 0) {
+        if (tom()) {
             hode = nyttNode;
             hale = nyttNode;
             endringer++;
@@ -396,7 +394,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         @Override
         public T next() {
-            throw new UnsupportedOperationException();
+             if (!hasNext()){
+                 throw new NoSuchElementException(" within values ");
+             }
+             if (endringer!=iteratorendringer){
+                 throw new ConcurrentModificationException("error in the number of changes");
+             }
+             T temp = denne.verdi;
+             denne= denne.neste;
+             fjernOK=true;
+             return temp;
         }
 
         @Override
