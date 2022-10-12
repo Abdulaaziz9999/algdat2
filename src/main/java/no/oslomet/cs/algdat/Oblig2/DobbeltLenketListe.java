@@ -384,7 +384,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
 
         private DobbeltLenketListeIterator(int indeks) {
-            throw new UnsupportedOperationException();
+            denne=finnNode(indeks);
+            fjernOK=false;
+            iteratorendringer=endringer;
         }
 
         @Override

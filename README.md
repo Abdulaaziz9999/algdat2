@@ -53,3 +53,7 @@ Task 6)
 checks whether the index we are going to remove is valid by calling index check. checks if the index is first in the list, if it is we swap the head pointers and set head to head.next. Then checks whether there are elements after head, if not then head and tail are set to zero. Then checks if the index is the last element in the list, if it is then we swap the tail and tail pointers.
 If not, then it is in the middle, then we loop through the list until we reach the index we want to remove and exchange the pointers to the previous and next node. when we find the index to be removed in each case, we store the value in an auxiliary variable, and return it after increasing changes and count by 1.
 The method boolean remove uses the same thinking as the method previously, only that what we check for is not the index but whether the value of the node is the same as the value that comes in as an argument. if it is then we swap pointers based on where it is in the list, finally we decrement the count by 1 and return the value that is removed from the list.
+
+task 8
+Creates the method T next() compares iterator changes and changes, throws exception if they are not. Then we check if hasnext is false, if it is then we throw a NoSuchElementException. The iterator() method simply returns a new iterator. The method doubly linked list iterator calls findnode with index as argument and sets it to "this". then it sets removeOK to false, and finally sets the iteratorrthing
+to equal changes.
